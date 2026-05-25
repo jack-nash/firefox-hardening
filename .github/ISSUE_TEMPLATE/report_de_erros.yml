@@ -1,0 +1,100 @@
+name: "🐛 Relatório de Erro"
+description: Registre um relatório de erro
+assignees: jack-nash
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Por favor, confirme se o problema está relacionado ao user.js ou policies.json do firefox-hardening antes de enviar um relatório.
+
+        Para resolver problemas na sua instalação, tente as soluções abaixo e teste o problema após cada etapa:
+        * Inicie o Firefox no [Modo de Solução de Problemas](https://support.mozilla.org/pt-BR/kb/firefox-modo-de-solucao-de-problemas?redirectslug=Safe+Mode&redirectlocale=en-US).
+        * Desative bloqueios de conteúdo em nível de DNS (como AdGuard Home, NextDNS, Control D, PiHole, etc) e [limpe o cache DNS](https://pt.wikihow.com/Limpar-a-Cache-do-DNS-(Flush-DNS)) (use o DNS da seu ISP, se possível).
+        * [Limpe os dados do site](https://support.mozilla.org/pt-BR/kb/limpe-cookies-e-dados-de-sites-no-firefox) e reinicie o Firefox.
+        * Crie um [novo perfil limpo](https://support.mozilla.org/pt-BR/kb/gerenciador-de-perfis-crie-remova-ou-troque-perfis?redirectslug=gerenciador-de-perfil-para-criar-e-remover-perfis&redirectlocale=pt-BR).
+
+  - type: checkboxes
+    attributes:
+      label: Pré-requisitos
+      options:
+        - label: O problema persiste ao usar o Firefox no Modo de Solução de Problemas.
+          required: true
+        - label: "O problema persiste depois que desativei bloqueios de conteúdo em nível de DNS (PiHole, NextDNS, etc.), limpei o cache DNS e tentei usar o DNS de meu provedor."
+          required: true
+        - label: O problema persiste depois que limpei os dados do site e reiniciei o Firefox.
+          required: true
+        - label: Criei um novo perfil limpo. O problema persiste após adicionar o user.js, mas NÃO é reproduzível em um novo perfil do Firefox sem edições.
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Descrição do erro
+      description: Descreva o problema.
+      placeholder: Um erro causa x e y...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Passos para reproduzir
+      description: Explique os passos necessários para reproduzir o problema.
+      placeholder: |
+        1. Vá para `...`
+        2. Clique em `...`
+        3. Role até `...`
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Comportamento esperado
+      description: O que você esperava que acontecesse em vez disso?
+      placeholder: O Firefox deveria fazer [isso]. Em vez disso, fez [aquilo].
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Capturas de tela
+      description: Adicione capturas de tela para ajudar a explicar seu problema (opcional).
+    validations:
+      required: false
+
+  - type: dropdown
+    attributes:
+      label: Sistema Operacional (SO)
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Outro
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Navegador
+      options:
+        - Firefox
+        - Firefox Beta
+        - Firefox Developer Edition
+        - Firefox Nightly
+        - Firefox ESR
+        - Outro
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Versão
+      placeholder: 150 estável
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Informações adicionais
+      description: Inclua qualquer outra informação que possa ser útil.
+    validations:
+      required: false
